@@ -1,5 +1,6 @@
 <?php
 
+
 class Database extends PDO
 {
     private $host = DB_HOST;
@@ -7,6 +8,7 @@ class Database extends PDO
     private $user = DB_USER;
     private $pass = DB_PASS;
     private $dbname = DB_DBNAME;
+    private $dbdbms =DB_DBMS;
 
     private $_db;
     private $stmt;
@@ -14,7 +16,10 @@ class Database extends PDO
 
     public function __construct()
     {
-        $dsn = 'pgsql:host=' . $this->host . ';port=' . $this->port . ';dbname=' . $this->dbname;
+        if ($this->dbdbms === 'postgres'){
+            $dsn = 'pgsql:host=' . $this->host . ';port=' . $this->port . ';dbname=' . $this->dbname;
+        }
+        $dsn = 'mysql:host=' . $this->host . ';port=' . $this->port . ';dbname=' . $this->dbname;
         $options = array(PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 
         try {

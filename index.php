@@ -108,84 +108,15 @@ require_once 'config.php';
         </div>
     </div>
     <div class="col-sm-7">
-        <h2>Thông tin khách hàng</h2>
+        <h2>Thanh Toán Bằng Tokenization</h2>
         <form class="form-" role="form" method="POST" id="formSubmit"
               action="<?= URL_DEMO ?>process.php?action=sendTokenizationPayment">
-            <!--            <div class="form-group col-sm-5">-->
-            <!--                <label class="control-label">Tổng Tiền <span class="require">(*)</span></label>-->
-            <!--                <input type="text" class="form-control" name="amount" id="amount" required>-->
-            <!--            </div>-->
-            <!--            <div class="form-group col-sm-5">-->
-            <!--                <label class="control-label">Số Lượng <span class="require">(*)</span></label>-->
-            <!--                <input type="text" placeholder="Số Lượng" class="form-control" name="totalItem" id="totalItem" required value="1">-->
-            <!--            </div>-->
-            <!--            <div class="form-group col-sm-5">-->
-            <!--                <label class="control-label">Tiền Tệ <span-->
-            <!--                            class="require">(*)</span></label>-->
-            <!---->
-            <!--                <select name="currency" id="currency" class="form-control">-->
-            <!--                    <option value="VND" selected>VND</option>-->
-            <!--                    <option value="USD">USD</option>-->
-            <!--                </select>-->
-            <!--            </div>-->
-            <div class="form-group col-sm-5">
-                <label class="control-label">Email <span class="require">(*)</span></label>
-                <input type="text" placeholder="Email" class="form-control" name="buyerEmail" id="buyerEmail"
-                       value="thanhna@peacesoft.net" required>
-            </div>
-            <!-- Text input-->
-            <div class="form-group col-sm-5">
-                <label class="control-label">Họ Tên <span class="require">(*)</span></label>
-                <input type="text" placeholder="Tên" class="form-control" name="buyerName" id="buyerName"
-                       value="Nguyễn ABC" required>
-            </div>
-            <div class="form-group col-sm-5">
-                <label class="control-label">Số Điện Thoại <span class="require">(*)</span></label>
-                <input type="text" placeholder="Số Điện Thoại" class="form-control" name="phoneNumber" id="phoneNumber"
-                       value="0988888888" required>
-            </div>
-            <!-- Text input-->
-<!--            <div class="form-group col-sm-5">-->
-<!--                <label class="control-label">Địa Chỉ <span class="require">(*)</span></label>-->
-<!--                <input type="text" placeholder="Địa Chỉ" class="form-control" name="buyerAddress" id="buyerAddress"-->
-<!--                       value="Xóm Mới - Duyên Hà - Đông Mỹ - Thanh Trì - Hà Nội" required>-->
-<!--            </div>-->
-            <div class="form-group col-sm-5">
-                <label class="control-label">Quốc Gia <span class="require">(*)</span></label>
-                <input type="text" placeholder="" class="form-control" name="buyerCountry" id="buyerCountry"
-                       value="Việt Nam" required>
-            </div>
-            <div class="form-group col-sm-5">
-                <label class="control-label">Vùng <span class="require">(*)</span></label>
-                <input type="text" placeholder="" class="form-control" name="state" id="state"
-                       value="Quận Hai Bà Trưng" required>
-            </div>
-            <!--            <div class="form-group col-sm-5">-->
-            <!--                <label class="control-label" for="orderDescription">Mô Tả HóaĐơn<span class="require">(*)</span></label>-->
-            <!--                <textarea placeholder="Thông Tin Mô Tả Hóa Đơn" id="orderDescription" name="orderDescription" class="form-control" required=""></textarea>-->
-            <!--            </div>-->
-            <div class="form-group col-sm-5">
-                <label class="control-label" for="street">Đường <span class="require">(*)</span></label>
-                <input type="text" placeholder="Đường" class="form-control" value="Hai Bà Trưng" name="street"
-                       id="street" required>
-            </div>
-            <div class="form-group col-sm-5">
-                <label class="control-label">Thành Phố <span class="require">(*)</span></label>
-                <input type="text" placeholder="Thành Phố" class="form-control" name="buyerCity" id="buyerCity"
-                       value="Hà Nội" required>
-            </div>
-            <div class="form-group col-sm-5">
-                <label class="control-label">Mã Bưu Chính <span class="require">(*)</span></label>
-                <input type="number" size="15" placeholder="Mã Bưu Chính" class="form-control" name="postalCode"
-                       id="postalCode"
-                       value="10000" required>
-            </div>
             <div class="row"></div>
             <div class="col-sm-12" id="alert"></div>
             <div class="form-group col-sm-5">
                 <p>&nbsp;</p>
                 <button id="sendInstallment" type="button" class="btn btn-info btn-lg">
-                    Thanh Toán Trả Góp
+                    CHECK OUT WITH TOKENIZATION
                 </button>
             </div>
         </form>
