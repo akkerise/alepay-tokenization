@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: akke
@@ -28,10 +29,12 @@ parse_str(file_get_contents('php://input'), $params);
 //$arrName = explode(' ', $params['buyerName']);
 
 $db = new Database();
-$dataUser = $db->getDataByCustomerId('users',[
-    'customerid' => 'thanhna@peacesoft.net-1497496730'
-]);
-$data['customerToken'] = 'c34cd685cbad1fa6aea06bd8f2daf396';
+if (!isset($_SESSION['customerid'])){
+    echo "Bạn không có customerid !";
+    echo "<pre>";var_dump($_SESSION);echo "</pre>";die();
+}
+$dataUser = $db->getDataByCustomerId(DB_TABLENAME,$_SESSION['customerid']);
+$data['customerToken'] = $dataUser['token'];
 $data['orderCode'] = 'order-' . time();
 $data['amount'] = '100000';
 $data['currency'] = 'VND';
