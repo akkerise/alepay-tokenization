@@ -10,29 +10,6 @@ require('Lib/ConnectDB/Database.php');
 
 $db = new Database();
 
-//$res = $db->insert('todo', [
-//    'title' => md5(rand(1, 1000)),
-//    'status' => 1,
-//    'created_at' => 'NOW()'
-//]);
-
-//$sql = "UPDATE todo SET title=:title, status=:status WHERE id=:_id";
-//$sql = "DELETE FROM todo WHERE id = 3";
-//$res = $db->delete('todo',
-//    [
-//        'id' => '',
-//        'status' => 1,
-//        'title' => 'clgt',
-//        'created_at' => NULL,
-//    ]
-//);
-
-
-//if ($res === true) {
-//    echo "Delete success";
-//} else {
-//    echo $res;
-//}
 ?>
 <?php session_start(); ?>
 <!doctype html>
@@ -108,7 +85,7 @@ require_once 'config.php';
         </div>
     </div>
     <div class="col-sm-7">
-        <h2>Thanh Toán Bằng Tokenization</h2>
+        <h4><span class="require">Bước 3: </span>Thanh Toán Bằng Tokenization</h4>
         <form class="form-" role="form" method="POST" id="formSubmit"
               action="<?= URL_DEMO ?>process.php?action=sendTokenizationPayment">
             <div class="row"></div>
@@ -116,7 +93,7 @@ require_once 'config.php';
             <div class="form-group col-sm-5">
                 <p>&nbsp;</p>
                 <button id="sendInstallment" type="button" class="btn btn-info btn-lg">
-                    CHECK OUT WITH TOKENIZATION
+                    Thanh Toán Tokenization
                 </button>
             </div>
         </form>

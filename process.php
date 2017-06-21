@@ -1,11 +1,5 @@
 <?php
 session_start();
-/**
- * Created by PhpStorm.
- * User: akke
- * Date: 6/11/17
- * Time: 10:54 PM
- */
 require 'config.php';
 require 'Lib/Alepay.php';
 require 'Lib/ConnectDB/Database.php';
@@ -26,17 +20,19 @@ $alepay = new Alepay($config);
 $data = [];
 $action = @$_REQUEST['action'];
 parse_str(file_get_contents('php://input'), $params);
-//$arrName = explode(' ', $params['buyerName']);
 
 $db = new Database();
+// Checkout with tokenization need $_SESSION equivalent logged in
 if (!isset($_SESSION['customerid'])){
     echo "Bạn không có customerid !";
     echo "<pre>";var_dump($_SESSION);echo "</pre>";die();
 }
+// $dataUser bring token
 $dataUser = $db->getDataByCustomerId(DB_TABLENAME,$_SESSION['customerid']);
+
 $data['customerToken'] = $dataUser['token'];
 $data['orderCode'] = 'order-' . time();
-$data['amount'] = '100000';
+$data['amount'] = '16000000';
 $data['currency'] = 'VND';
 $data['orderDescription'] = 'Mua iPorn 88';
 $data['returnUrl'] = URL_CALLBACK;
